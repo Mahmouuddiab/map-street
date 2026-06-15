@@ -1,17 +1,72 @@
 # map_street
 
-A new Flutter project.
+A Flutter map application that displays the user's current location using OpenStreetMap and Flutter Map.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+* Display interactive maps using Flutter Map
+* Get the user's current location
+* Location permissions handling
+* OpenStreetMap integration
+* HTTP requests support for map-related services
 
-A few resources to get you started if this is your first Flutter project:
+## Dependencies
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+  geolocator: ^13.0.1
+  http: ^1.2.2
+```
+
+## Android Permissions
+
+Add the following permissions to:
+
+`android/app/src/main/AndroidManifest.xml`
+
+```xml
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
+## iOS Permissions
+
+Add the following to:
+
+`ios/Runner/Info.plist`
+
+```xml
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>This app needs your location to show it on the map.</string>
+```
+
+## Installation
+
+1. Install dependencies:
+
+```bash
+flutter pub get
+```
+
+2. Run the application:
+
+```bash
+flutter run
+```
+
+## Packages Used
+
+* flutter_map
+* latlong2
+* geolocator
+* http
+
+## License
+
+This project is for learning and development purposes.
